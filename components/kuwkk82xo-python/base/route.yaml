@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: kuwkk82xo-python
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: kuwkk82xo-python 
+  name: kuwkk82xo-python
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: kuwkk82xo-python
+    weight: 100 
